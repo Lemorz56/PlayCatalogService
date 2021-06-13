@@ -14,7 +14,7 @@ namespace Play.Catalog.Service.Repositories
 
 		public ItemsRepository()
 		{
-			var mongoClient = new MongoClient("mongodb+srv://Lemorz56:Hibbert66!@clusterstorelocator.ddp8q.mongodb.net/myFirstDatabase?retryWrites=true&w=majority");
+			var mongoClient = new MongoClient("");
 			var database = mongoClient.GetDatabase("NETMicroservice");
 			dbCollection = database.GetCollection<Item>(collectionName);
 		}
