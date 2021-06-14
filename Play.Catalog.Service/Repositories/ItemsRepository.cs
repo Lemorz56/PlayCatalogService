@@ -13,10 +13,8 @@ namespace Play.Catalog.Service.Repositories
 		private readonly IMongoCollection<Item> dbCollection;
 		private readonly FilterDefinitionBuilder<Item> filterBuilder = Builders<Item>.Filter;
 
-		public ItemsRepository()
+		public ItemsRepository(IMongoDatabase database)
 		{
-			var mongoClient = new MongoClient("");
-			var database = mongoClient.GetDatabase("NETMicroservice");
 			dbCollection = database.GetCollection<Item>(collectionName);
 		}
 
